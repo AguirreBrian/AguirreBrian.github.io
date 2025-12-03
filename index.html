@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport y Tema (CRÍTICO para PWA) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e40af">
+    <title>CEI | Consultoría Estratégica Informática</title>
+    
+    <!-- Enlace a la fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cei-primary': '#1e40af', // Blue 700
+                        'cei-dark': '#0f172a',    // Slate 900
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para el look and feel profesional */
+        .card-service {
+            transition: all 0.3s ease;
+        }
+        .card-service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.3), 0 4px 6px -2px rgba(30, 64, 175, 0.2);
+        }
+        
+        /* Asegura que el contenedor principal use toda la altura disponible */
+        html, body {
+            height: 100%;
+        }
+        
+        /* Estilo para el formulario: MEJORADO EL CONTRASTE Y FOCUS */
+        .input-field {
+            /* Usamos bg-gray-700 para contrastar con el bg-gray-800 del formulario */
+            @apply w-full p-3 bg-gray-700 border border-cei-primary/50 rounded-lg text-white placeholder-gray-400 focus:ring-3 focus:ring-cei-primary focus:border-cei-primary transition-all duration-200 ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-cei-dark text-white font-sans antialiased">
+
+    <!-- CABECERA y NAVEGACIÓN -->
+    <header class="bg-cei-dark/95 sticky top-0 z-50 shadow-lg border-b border-cei-primary/50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-cei-primary tracking-widest">
+                CEI <span class="text-white font-medium text-lg hidden sm:inline">Consultoría</span>
+            </div>
+            <div class="space-x-4 text-sm font-medium hidden md:flex">
+                <a href="#servicios" class="hover:text-cei-primary transition-colors">Servicios</a>
+                <a href="#ventajas" class="hover:text-cei-primary transition-colors">Ventajas</a>
+                <a href="#contacto" class="px-4 py-2 bg-cei-primary rounded-full hover:bg-blue-800 transition-colors">Contacto</a>
+            </div>
+            <!-- Botón de menú para móvil (simulado) -->
+            <button class="md:hidden text-white hover:text-cei-primary">
+                <!-- Icono de Hamburguesa (SVG simple) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="min-h-screen">
+        
+        <!-- SECCIÓN HERO -->
+        <section class="relative pt-24 pb-32 bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-cei-primary">
+                    Transformación Digital con Visión Estratégica
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    En CEI, fusionamos la experiencia técnica con la estrategia de negocio para optimizar tu infraestructura IT y catapultar tu eficiencia.
+                </p>
+                <a href="#contacto" class="inline-block px-10 py-4 text-lg font-bold bg-cei-primary rounded-full shadow-xl hover:bg-blue-800 transition-transform duration-300 transform hover:scale-105">
+                    Empieza Hoy tu Estrategia IT
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SERVICIOS -->
+        <section id="servicios" class="py-20 bg-cei-dark">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">Nuestros Servicios Clave</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Tarjeta 1: Consultoría Cloud -->
+                    <div class="card-service bg-gray-800 p-6 rounded-xl border-t-4 border-cei-primary/70 shadow-2xl">
+                        <div class="text-4xl text-cei-primary mb-4">☁️</div>
+                        <h3 class="text-xl font-bold mb-3">Estrategia Cloud</h3>
+                        <p class="text-gray-400 text-sm">Migración y optimización de infraestructuras a plataformas como AWS, Azure y Google Cloud. Escalabilidad garantizada.</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Ciberseguridad -->
+                    <div class="card-service bg-gray-800 p-6 rounded-xl border-t-4 border-cei-primary/70 shadow-2xl">
+                        <div class="text-4xl text-cei-primary mb-4">🛡️</div>
+                        <h3 class="text-xl font-bold mb-3">Ciberseguridad</h3>
+                        <p class="text-gray-400 text-sm">Análisis de riesgos, implementación de firewalls y soluciones de protección de datos. Blindamos tu negocio contra amenazas.</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Desarrollo de Software -->
+                    <div class="card-service bg-gray-800 p-6 rounded-xl border-t-4 border-cei-primary/70 shadow-2xl">
+                        <div class="text-4xl text-cei-primary mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold mb-3">Desarrollo a Medida</h3>
+                        <p class="text-gray-400 text-sm">Creación de aplicaciones web y móviles personalizadas para automatizar procesos internos y mejorar la experiencia del cliente.</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Data Analytics -->
+                    <div class="card-service bg-gray-800 p-6 rounded-xl border-t-4 border-cei-primary/70 shadow-2xl">
+                        <div class="text-4xl text-cei-primary mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-3">Análisis de Datos</h3>
+                        <p class="text-gray-400 text-sm">Implementación de soluciones de Business Intelligence para transformar datos brutos en decisiones de negocio inteligentes.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN POR QUÉ CEI (Ventajas PWA/App) -->
+        <section id="ventajas" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">¿Por Qué Elegir CEI?</h2>
+                <p class="text-xl text-center text-gray-300 max-w-4xl mx-auto mb-16">
+                    Te ofrecemos una consultoría **ágil y moderna**, diseñada para un mundo digital. ¡Y como PWA, tendrás acceso instantáneo a nuestros recursos!
+                </p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Ventaja 1: Experiencia -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col items-center text-center border-b-4 border-blue-500">
+                        <div class="text-5xl mb-4 text-blue-500">💡</div>
+                        <h3 class="text-2xl font-bold mb-3">Enfoque Estratégico</h3>
+                        <p class="text-gray-400">Nuestros consultores no solo implementan tecnología; diseñan soluciones que se alinean perfectamente con tus objetivos a largo plazo.</p>
+                    </div>
+
+                    <!-- Ventaja 2: Agilidad (PWA) -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col items-center text-center border-b-4 border-blue-500">
+                        <div class="text-5xl mb-4 text-blue-500">⚡</div>
+                        <h3 class="text-2xl font-bold mb-3">Rapidez y Eficiencia</h3>
+                        <p class="text-gray-400">Gracias a nuestra arquitectura PWA, accedes a herramientas y documentación clave de forma instantánea, incluso sin conexión.</p>
+                    </div>
+
+                    <!-- Ventaja 3: Personalización -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col items-center text-center border-b-4 border-blue-500">
+                        <div class="text-5xl mb-4 text-blue-500">🤝</div>
+                        <h3 class="text-2xl font-bold mb-3">Relación de Confianza</h3>
+                        <p class="text-gray-400">Trabajamos como una extensión de tu equipo, asegurando que cada solución esté hecha a la medida de tus necesidades específicas.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN DE CONTACTO (REDISENADO A 2 COLUMNAS) -->
+        <section id="contacto" class="py-20 bg-cei-dark">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-4 text-white">Comienza tu Proyecto</h2>
+                <p class="text-lg text-center text-gray-400 mb-10 max-w-4xl mx-auto">
+                    Cuéntanos sobre tu desafío informático. Un consultor se pondrá en contacto contigo en menos de 24 horas.
+                </p>
+                
+                <!-- Contenedor principal de Contacto: Dos Columnas en desktop -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
+                    <!-- Columna Izquierda: Información de Contacto -->
+                    <div class="lg:pt-8 p-6 bg-gray-900 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold mb-6 text-white border-b border-cei-primary/50 pb-2">Hablemos de tu Estrategia</h3>
+                        <p class="text-gray-400 mb-8">
+                            Estamos listos para escuchar tus desafíos y diseñar la hoja de ruta digital que te llevará al éxito.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <!-- Contacto 1: Dirección (simulada) -->
+                            <div class="flex items-start space-x-4">
+                                <span class="text-2xl text-cei-primary mt-1">📍</span>
+                                <div>
+                                    <p class="font-bold text-lg text-white">Oficinas Principales</p>
+                                    <p class="text-gray-400">Av. Innovación Digital #456, Piso 10, Ciudad Tecnológica.</p>
+                                </div>
+                            </div>
+                            <!-- Contacto 2: Email -->
+                            <div class="flex items-start space-x-4">
+                                <span class="text-2xl text-cei-primary mt-1">📧</span>
+                                <div>
+                                    <p class="font-bold text-lg text-white">E-mail de Soporte</p>
+                                    <p class="text-gray-400 hover:text-cei-primary transition-colors cursor-pointer">contacto@ceiconsultoria.com</p>
+                                </div>
+                            </div>
+                            <!-- Contacto 3: Teléfono -->
+                            <div class="flex items-start space-x-4">
+                                <span class="text-2xl text-cei-primary mt-1">📞</span>
+                                <div>
+                                    <p class="font-bold text-lg text-white">Llámanos</p>
+                                    <p class="text-gray-400 hover:text-cei-primary transition-colors cursor-pointer">+52 (55) 5555 5555</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Formulario de Contacto -->
+                    <form id="contactForm" class="bg-gray-800 p-8 rounded-2xl shadow-2xl border border-cei-primary/50">
+                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Formulario de Contacto</h3>
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium mb-2 text-gray-300">Nombre completo</label>
+                            <input type="text" id="name" name="name" required class="input-field">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium mb-2 text-gray-300">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required class="input-field">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium mb-2 text-gray-300">Interés principal (Cloud, Seguridad, etc.)</label>
+                            <input type="text" id="subject" name="subject" class="input-field">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium mb-2 text-gray-300">Tu Mensaje / Descripción del Proyecto</label>
+                            <textarea id="message" name="message" rows="4" required class="input-field"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 text-lg font-bold bg-cei-primary rounded-lg shadow-lg shadow-cei-primary/40 hover:bg-blue-800 transition-colors duration-300 transform hover:scale-[1.01]">
+                            Enviar Solicitud
+                        </button>
+                        
+                        <div id="formMessage" class="mt-4 text-center text-sm font-medium text-green-400 hidden">
+                            <!-- Mensaje de éxito/error aquí -->
+                        </div>
+                    </form>
+                    
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 py-6 border-t border-cei-primary/50">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            &copy; 2025 CEI Consultoría Estratégica Informática. Todos los derechos reservados. | Hecho con tecnología PWA.
+        </div>
+    </footer>
+
+    <!-- LÓGICA JAVASCRIPT: PWA (Manifest) y Formulario -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // =========================================================
+            // LÓGICA PWA: Registro del Manifest
+            // =========================================================
+
+            // --- 1. Contenido del Manifest (JSON) ---
+            const manifestContent = {
+                name: "CEI Consultoría IT",
+                short_name: "CEI",
+                description: "Consultoría Estratégica Informática de alto nivel.",
+                start_url: "/",
+                display: "standalone",
+                background_color: "#0f172a",
+                theme_color: "#1e40af",
+                icons: [
+                    // Usamos placeholders para simular iconos
+                    { src: "https://placehold.co/192x192/1e40af/ffffff?text=CEI", sizes: "192x192", type: "image/png" },
+                    { src: "https://placehold.co/512x512/1e40af/ffffff?text=CEI", sizes: "512x512", type: "image/png" }
+                ]
+            };
+
+            // --- 2. Creación y Registro Dinámico del Manifest ---
+
+            // Crear Blob URL para el Manifest
+            const manifestBlob = new Blob([JSON.stringify(manifestContent)], { type: 'application/json' });
+            const manifestUrl = URL.createObjectURL(manifestBlob);
+
+            // Inyectar el tag <link rel="manifest"> al head
+            const link = document.createElement('link');
+            link.rel = 'manifest';
+            link.href = manifestUrl;
+            document.head.appendChild(link);
+
+            // El registro del Manifest permite que la aplicación sea instalable.
+            console.log('Manifest PWA registrado con éxito. La aplicación ahora es instalable.');
+
+
+            // =========================================================
+            // LÓGICA DEL FORMULARIO DE CONTACTO
+            // =========================================================
+            
+            const form = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Simulamos el envío de datos
+                const name = document.getElementById('name').value;
+
+                formMessage.classList.remove('hidden');
+                formMessage.classList.remove('text-red-400');
+                formMessage.classList.add('text-green-400');
+                formMessage.innerHTML = `¡Gracias, ${name}! Tu solicitud ha sido enviada con éxito. Pronto te contactaremos.`;
+                
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+
+                // Opcional: limpiar el formulario
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
